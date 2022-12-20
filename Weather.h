@@ -10,63 +10,64 @@ enum type
     FOGGY
 };
 
-class Weather
-{
+class Weather {
 private:
-    int day;
-    string city;
-    string country;
-    double temp;
-    double humidity_in_perc;
-    double wind_speed;
+    int day_;
+    string city_;
+    string country_;
+    double temp_;
+    double humidity_in_perc_;
+    double wind_speed_;
     type t;
 public:
     Weather()
     {
-        day = 1;
-        city = "Lviv";
-        country = "Ukraine";
-        temp = 23;
-        humidity_in_perc = 80;
-        wind_speed = 5;
+        day_ = 1;
+        city_ = "Lviv";
+        country_ = "Ukraine";
+        temp_ = 23;
+        humidity_in_perc_ = 80;
+        wind_speed_ = 5;
         t = SUNNY;
     }
 
-    Weather(int day, string city, string country, double temp, double humidity_in_perc, double wind_speed, type t)
+    Weather(int day, string city, string country,
+        double temp, double humidity_in_perc,
+        double wind_speed, type t)
     {
-        this->day = day;
-        this->city = city;
-        this->country = country;
-        this->temp = temp;
-        this->humidity_in_perc = humidity_in_perc;
-        this->wind_speed = wind_speed;
+        this->day_ = day;
+        this->city_ = city;
+        this->country_ = country;
+        this->temp_ = temp;
+        this->humidity_in_perc_ = humidity_in_perc;
+        this->wind_speed_ = wind_speed;
         this->t = t;
     }
 
-    int getDay() { return day; }
-    void setDay(int day) { this->day = day; }
+    int getDay() { return day_; }
+    void setDay(int day) { this->day_ = day; }
 
-    string getCity() { return city; }
-    void setCity(string city) { this->city = city; }
+    string getCity() { return city_; }
+    void setCity(string city) { this->city_ = city; }
 
-    string getCountry() { return country; }
-    void setCountry() { this->country = country; }
+    string getCountry() { return country_; }
+    void setCountry() { this->country_ = country_; }
 
-    double getTemp() { return temp; }
-    void setTemp(double temp) { this->temp = temp; }
+    double getTemp() { return temp_; }
+    void setTemp(double temp) { this->temp_ = temp; }
 
-    double getHumidity() { return humidity_in_perc; }
-    void setHumidity(double humidity) { this->humidity_in_perc = humidity; }
+    double getHumidity() { return humidity_in_perc_; }
+    void setHumidity(double humidity) { this->humidity_in_perc_ = humidity; }
 
-    double getWindSpeed() { return wind_speed; }
-    void setWindSpeed() { this->wind_speed = wind_speed; }
+    double getWindSpeed() { return wind_speed_; }
+    void setWindSpeed() { this->wind_speed_ = wind_speed_; }
 
     type getType() { return t; }
     void setType(type t) { this->t = t; }
 
-    void isLvivWeather()
+    void IsLvivWeather()
     {
-        if ((humidity_in_perc > 80) && (t == RAINY))
+        if ((humidity_in_perc_ > 80) && (t == RAINY))
             cout << "The typical day in Lviv\n";
         else
             cout << "You're lucky man\n";
@@ -74,20 +75,20 @@ public:
 
     void print()
     {
-        cout << "\nDay: " << this->day << "\nCity: " << this->city << "\nCountry: " << this->country <<
-            "\nTemperature: " << this->temp << "\nHumidity_in_perc: " << this->humidity_in_perc << "\nWind speed: " << this->wind_speed <<
+        cout << "\nDay: " << this->day_ << "\nCity: " << this->city_ << "\nCountry: " << this->country_ <<
+            "\nTemperature: " << this->temp_ << "\nHumidity_in_perc: " << this->humidity_in_perc_ << "\nWind speed: " << this->wind_speed_ <<
             "\nType: " << this->t << endl;
-        isLvivWeather();
+        IsLvivWeather();
     }
 
     friend bool operator > (const Weather& w1, const Weather& w2)
     {
-        return w1.day > w2.day;
+        return w1.day_ > w2.day_;
     }
 
     friend bool operator < (const Weather& w1, const Weather& w2)
     {
-        return w1.day < w2.day;
+        return w1.day_ < w2.day_;
     }
 
     ~Weather() {}

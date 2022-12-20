@@ -1,5 +1,7 @@
 #include <iostream>
 #include "Weather_Calendar.h"
+using namespace std;
+
 int main()
 {
     Weather w1(1, "Lviv", "Ukraine", 10, 81, 5, RAINY);
@@ -7,11 +9,11 @@ int main()
     Weather w3(4, "Kyiv", "Ukraine", 15, 79, 6, RAINY);
     Weather w4(2, "TERNOPIL", "UKRAINE", 16, 83, 5, CLOUDY);
     WeatherCalendar UKRAINE;
-    UKRAINE.Add(w1);
-    UKRAINE.Add(w2);
-    UKRAINE.Add(w4);
-    UKRAINE.Add(w3);
-    UKRAINE.sortW();
-    UKRAINE.print();
-    UKRAINE.findMaxTemperature(3);
+    UKRAINE.AddDayToCalendar(w1);
+    UKRAINE.AddDayToCalendar(w2);
+    UKRAINE.AddDayToCalendar(w3);
+    UKRAINE.AddDayToCalendar(w4);
+    UKRAINE.SortW();
+    UKRAINE.Print();
+    UKRAINE.FindMaxTemperature(3);;
 }

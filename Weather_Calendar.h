@@ -5,27 +5,25 @@
 
 using namespace std;
 
-
-class WeatherCalendar
-{
+class WeatherCalendar {
 private:
-    vector<Weather> WC;
+    vector<Weather> Weather_Calendar;
 public:
     WeatherCalendar() {}
 
     WeatherCalendar(vector<Weather> v)
     {
-        this->WC = v;
+        this->Weather_Calendar = v;
     }
 
-    void findMaxTemperature(int day)
+    void FindMaxTemperature(int day)
     {
         double maxTemp = INT_MIN;
-        for (int i = 0; i < WC.size(); i++)
+        for (int i = 0; i < Weather_Calendar.size(); i++)
         {
-            if (WC[i].getTemp() > maxTemp && WC[i].getDay() == day)
+            if (Weather_Calendar[i].getTemp() > maxTemp && Weather_Calendar[i].getDay() == day)
             {
-                maxTemp = WC[i].getTemp();
+                maxTemp = Weather_Calendar[i].getTemp();
             }
         }
         if (maxTemp == INT_MIN)
@@ -36,25 +34,25 @@ public:
             cout << "\nMax temp: " << maxTemp << endl;
     }
 
-    void Add(Weather w)
+    void AddDayToCalendar(Weather w)
     {
-        WC.push_back(w);
+        Weather_Calendar.push_back(w);
     }
 
-    void print()
+    void Print()
     {
-        for (int i = 0; i < WC.size(); i++)
-            WC[i].print();
+        for (int i = 0; i < Weather_Calendar.size(); i++)
+            Weather_Calendar[i].print();
     }
 
-    void sortW()
+    void SortW()
     {
-        sort(WC.begin(), WC.end());
+        sort(Weather_Calendar.begin(), Weather_Calendar.end());
     }
 
     ~WeatherCalendar()
     {
-        WC.clear();
-        WC.shrink_to_fit();
+        Weather_Calendar.clear();
+        Weather_Calendar.shrink_to_fit();
     }
 };

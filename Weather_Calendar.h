@@ -11,9 +11,9 @@ private:
 public:
     WeatherCalendar() {}
 
-    WeatherCalendar(vector<Weather> weather)
+    WeatherCalendar(vector<Weather> weather_calendar)
     {
-        this->Weather_Calendar = weather;
+        this->Weather_Calendar = weather_calendar;
     }
 
     void FindMaxTemperature(int day)
@@ -34,9 +34,9 @@ public:
             cout << "\nMax temp: " << maxTemp << endl;
     }
 
-    void AddDayToCalendar(Weather w)
+    void AddDayToCalendar(Weather weather)
     {
-        Weather_Calendar.push_back(w);
+        Weather_Calendar.push_back(weather);
     }
 
     void Print()

@@ -11,9 +11,9 @@ private:
 public:
     WeatherCalendar() {}
 
-    WeatherCalendar(vector<Weather> v)
+    WeatherCalendar(vector<Weather> weather)
     {
-        this->Weather_Calendar = v;
+        this->Weather_Calendar = weather;
     }
 
     void FindMaxTemperature(int day)
